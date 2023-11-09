@@ -12,6 +12,9 @@ const lanGageMessageSchema = new Schema({
   timestamp: {
     type: Number,
     default: Date.now},
+  conversationID: {
+    type: Number,
+    required: true},
 },
 );
 

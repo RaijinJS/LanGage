@@ -1,7 +1,8 @@
 const LanGageMessage = require('./messageSchema')
 
-async function postUserMessage (req, res) {
+async function postMessage (req, res) {
   try {
+    // const {message, conversation} = req.body
     const newMessageWithId = await LanGageMessage.create(req.body)
     return newMessageWithId;
   } catch (e) {
@@ -10,4 +11,6 @@ async function postUserMessage (req, res) {
   }
 };
 
-module.exports = { postUserMessage }
+// TODO: update conversation ID
+
+module.exports = { postMessage }

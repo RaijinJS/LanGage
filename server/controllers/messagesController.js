@@ -1,5 +1,5 @@
 const GPT = require('../gpt/gptAPI');
-const { postUserMessage } = require('../models/messageModel')
+const { postMessage } = require('../models/messageModel')
 
 async function gptReply (req, res) {
   try {
@@ -7,10 +7,14 @@ async function gptReply (req, res) {
     // sanitize req
 
     if (req.method === 'POST') {
-      await postUserMessage(req, res);
+      await postMessage(req, res);
     }
-    const reply = await GPT.main();
-    res.status(200).json(reply)
+    const {role, content, conversationID} = req.body
+    const userMessage = {role, content};
+
+    const reply = await GPT.main(userMessage);
+    await postMessage(req, res);
+    res.status(200).json(reply.message)
   } catch (e) {
     console.log('AI call failed:', e);
     res.sendStatus(500);
