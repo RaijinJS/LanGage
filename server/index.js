@@ -6,6 +6,7 @@ const cors = require('cors')
 
 const PORT = port;
 
+// TODO: increase cors security with client param
 app.use(cors());
 
 app.use(express.json());

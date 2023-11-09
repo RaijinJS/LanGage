@@ -7,14 +7,16 @@ async function gptReply (req, res) {
     // sanitize req
 
     if (req.method === 'POST') {
-      await postMessage(req, res);
+      await postMessage(req.body);
     }
     const {role, content, conversationID} = req.body
     const userMessage = {role, content};
 
-    const reply = await GPT.main(userMessage);
-    await postMessage(req, res);
-    res.status(200).json(reply.message)
+    const gptOutput = await GPT.main(userMessage);
+    const reply = gptOutput.message;
+    reply.conversationID = conversationID;
+    replyWithID = await postMessage(reply);
+    res.status(200).json(replyWithID);
   } catch (e) {
     console.log('AI call failed:', e);
     res.sendStatus(500);
