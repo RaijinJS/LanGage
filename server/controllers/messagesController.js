@@ -1,14 +1,26 @@
 const GPT = require('../gpt/gptAPI');
 const { postMessage, retrieveConversation } = require('../models/messageModel')
 
-async function gptReply (req, res) {
+
+async function postNewMessage(req, res) {
   try {
 
     // sanitize req
 
-    if (req.method === 'POST') {
-      await postMessage(req.body);
-    }
+    const newMessageWithID = await postMessage(req.body);
+    res.status(200).json(newMessageWithID);
+  } catch (e) {
+    console.log('New message post failed:', e);
+    res.sendStatus(500);
+  }
+  };
+
+
+
+async function gptReply(req, res) {
+  try {
+
+    // sanitize req
     const { role, content, conversationID } = req.body;
     const userMessage = {role, content};
 
@@ -38,4 +50,4 @@ async function getConversation (req, res) {
 
 
 
-module.exports = { gptReply, getConversation };
+module.exports = { gptReply, getConversation, postNewMessage };
