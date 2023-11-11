@@ -1,5 +1,5 @@
 const GPT = require('../gpt/gptAPI');
-const { postMessage, retrieveConversation } = require('../models/messageModel')
+const { postMessage, retrieveConversation, retrieveConversationList } = require('../models/messageModel')
 
 
 async function postNewMessage(req, res) {
@@ -46,7 +46,15 @@ async function getConversation (req, res) {
     }
 }
 
+async function getConversationsList (req, res) {
+  try {
+    const conversationList = await retrieveConversationList();
+    console.log('conversationList: ',conversationList);
+    res.status(200).json(conversationList);
+    } catch (e) {
+    console.log('Got an error:', e);
+    res.sendStatus(500);
+    }
+}
 
-
-
-module.exports = { gptReply, getConversation, postNewMessage };
+module.exports = { gptReply, getConversation, postNewMessage, getConversationsList };
