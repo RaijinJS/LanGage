@@ -8,7 +8,7 @@ async function postMessage (message) {
     console.log('User message not posted:', e);
     res.sendStatus(500);
   }
-};
+}
 
 // TODO: update conversation ID
 async function retrieveConversation(conversationID) {
@@ -19,7 +19,6 @@ async function retrieveConversation(conversationID) {
     console.log('Conversation retrieval failed:', e);
     res.sendStatus(500);
   }
-
 }
 
 module.exports = { postMessage, retrieveConversation }

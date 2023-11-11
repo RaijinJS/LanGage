@@ -13,7 +13,7 @@ async function postNewMessage(req, res) {
     console.log('New message post failed:', e);
     res.sendStatus(500);
   }
-  };
+  }
 
 
 
@@ -27,20 +27,19 @@ async function gptReply(req, res) {
     const gptOutput = await GPT.main(userMessage);
     const reply = gptOutput.message;
     reply.conversationID = conversationID;
-    replyWithID = await postMessage(reply);
+    const replyWithID = await postMessage(reply);
     res.status(200).json(replyWithID);
   } catch (e) {
     console.log('AI call failed:', e);
     res.sendStatus(500);
   }
-};
+}
 
 async function getConversation (req, res) {
   try {
-    const conversationID = req.params.id
-    console.log(conversationID)
+    const conversationID = req.params.id;
     const conversationHistory = await retrieveConversation(conversationID);
-    res.status(200).json(conversationHistory)
+    res.status(200).json(conversationHistory);
     } catch (e) {
     console.log('Got an error:', e);
     res.sendStatus(500);
