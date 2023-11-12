@@ -1,5 +1,6 @@
 const GPT = require('../gpt/gptAPI');
 const { postMessage, retrieveConversation, retrieveConversationList } = require('../models/messageModel')
+const { reduceAndSortConversationHistory } = require('../util.js')
 
 
 async function postNewMessage(req, res) {
@@ -23,8 +24,9 @@ async function gptReply(req, res) {
     // sanitize req
     const { role, content, conversationID } = req.body;
     const userMessage = {role, content};
-
-    const gptOutput = await GPT.main(userMessage);
+    const dbConversationHistory = await retrieveConversation(conversationID);
+    const conversationHistory = reduceAndSortConversationHistory(dbConversationHistory);
+    const gptOutput = await GPT.main(userMessage, conversationHistory);
     const reply = gptOutput.message;
     reply.conversationID = conversationID;
     const replyWithID = await postMessage(reply);
