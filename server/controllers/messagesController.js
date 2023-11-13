@@ -20,8 +20,6 @@ async function postNewMessage(req, res) {
 
 async function gptReply(req, res) {
   try {
-
-    // sanitize req
     const { role, content, conversationID } = req.body;
     const userMessage = {role, content};
     const dbConversationHistory = await retrieveConversation(conversationID);
