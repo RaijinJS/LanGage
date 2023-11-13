@@ -14,7 +14,8 @@ async function main(userMessage, prevMessages) {
       { role: 'system', content: systemPrompt },
       userMessage
     ],
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-4-1106-preview',
+    // model: 'gpt-3.5-turbo',
     temperature: 0,
   });
 

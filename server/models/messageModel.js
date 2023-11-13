@@ -31,4 +31,19 @@ async function retrieveConversationList() {
   }
 }
 
-module.exports = { postMessage, retrieveConversation, retrieveConversationList }
+// add addGPTReplyProp(replyWithID, _id) function to update the userMessage to which the gptreply responds to with a property that holds the reply
+
+async function addGPTReplyProp (gptReply, id) {
+  try {
+    await LanGageMessage.updateOne(
+      { _id: id },
+      { $set: { reply: gptReply } }
+    );
+  } catch (e) {
+    console.log('User message not posted:', e);
+    throw e;
+  }
+}
+
+
+module.exports = { postMessage, retrieveConversation, retrieveConversationList, addGPTReplyProp }

@@ -1,5 +1,5 @@
 const GPT = require('../gpt/gptAPI');
-const { postMessage, retrieveConversation, retrieveConversationList } = require('../models/messageModel')
+const { postMessage, retrieveConversation, retrieveConversationList, addGPTReplyProp } = require('../models/messageModel')
 const { reduceAndSortConversationHistory } = require('../util.js')
 
 
@@ -20,7 +20,7 @@ async function postNewMessage(req, res) {
 
 async function gptReply(req, res) {
   try {
-    const { role, content, conversationID } = req.body;
+    const { role, content, conversationID, _id } = req.body;
     const userMessage = {role, content};
     const dbConversationHistory = await retrieveConversation(conversationID);
     const conversationHistory = reduceAndSortConversationHistory(dbConversationHistory);
@@ -28,6 +28,7 @@ async function gptReply(req, res) {
     const reply = gptOutput.message;
     reply.conversationID = conversationID;
     const replyWithID = await postMessage(reply);
+    await addGPTReplyProp(replyWithID.content, _id);
     res.status(200).json(replyWithID);
   } catch (e) {
     console.log('AI call failed:', e);
