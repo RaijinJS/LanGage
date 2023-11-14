@@ -1,12 +1,17 @@
-const { port } = require('./config.js')
-const express = require('express');
+const { port } = require("./config.js");
+const express = require("express");
 const app = express();
-const router = require('./router.js')
-const cors = require('cors')
+const router = require("./router.js");
+const cors = require("cors");
 
+const corsOptions = {
+  origin: "http://localhost:3000",
+  methods: "GET,PUT,POST",
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
 
-// TODO: increase cors security with client param
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(router);

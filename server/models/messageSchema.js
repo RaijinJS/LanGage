@@ -1,28 +1,30 @@
-const mongoose = require('../db.js')
+const mongoose = require("../db.js");
 
 const Schema = mongoose.Schema;
 
 const lanGageMessageSchema = new Schema({
   role: {
     type: String,
-    required: true },
+    required: true,
+  },
   content: {
     type: String,
-    required: true },
+    required: true,
+  },
   timestamp: {
     type: Number,
-    default: Date.now},
+    default: Date.now,
+  },
   conversationID: {
     type: Number,
-    required: true
+    required: true,
   },
   reply: {
     type: String,
-    default: null},
-},
-);
+    default: null,
+  },
+});
 
-const Message = mongoose.model('LanGageMessage', lanGageMessageSchema);
-
+const Message = mongoose.model("LanGageMessage", lanGageMessageSchema);
 
 module.exports = Message;
