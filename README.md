@@ -66,7 +66,7 @@ Want to see feedback on an older message? Hovering over your message will reveal
 
 ![7.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\7.png)
 
-Not sure what the response from LanGage means? Or just not familiar with a specifc word? Hovering over a message will reveal a translate button, while clicking on a word will open up a pop-up with a translation by DeepL.
+Not sure what the response from LanGage means? Or just not familiar with a specific word? Hovering over a message will reveal a translate button, while clicking on a word will open up a pop-up with a translation by DeepL.
 
 ![8.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\8.png)
 
