@@ -25,7 +25,6 @@ async function retrieveConversation(conversationID) {
 async function retrieveConversationList() {
   try {
     const conversationList = await LanGageMessage.distinct("conversationID");
-    console.log("conversationList: ", conversationList);
     return conversationList;
   } catch (e) {
     console.log("Conversation list retrieval failed:", e);
