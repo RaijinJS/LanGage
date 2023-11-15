@@ -36,6 +36,20 @@ and fears aside and improve your conversational prowess today!
 
 - **DeepL**: Deepl Translation API via node via node dependency
 
+## Getting Started
+
+ The project is divided into two repositories, front end (Langage_client) and back end (LanGage). Run `npm i` in both directories and make sure to add a config file to the backend in the server directory. The config file should contain the following:
+
+```
+module.exports = {port: 3001,
+
+  apiK: 'a string containing your OpenAI GPT API key',
+
+  deeplApiK: 'a string containing your DeepL API key',
+
+};
+```
+
 ## Demo Screenshots:
 
 Start a new conversation - The LanGage mascot quietly reads his book while waiting.

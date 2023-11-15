@@ -13,7 +13,7 @@ async function postNewMessage(req, res) {
     res.status(200).json(newMessageWithID);
   } catch (e) {
     console.log("New message post failed:", e);
-    res.sendStatus(500);
+    res.sendStatus(500).json({ error: "New message post failed" });
   }
 }
 
@@ -33,7 +33,7 @@ async function gptReply(req, res) {
     res.status(200).json(replyWithID);
   } catch (e) {
     console.log("AI call failed:", e);
-    res.sendStatus(500);
+    res.sendStatus(500).json({ error: "AI reply failed" });
   }
 }
 
@@ -44,7 +44,7 @@ async function getConversation(req, res) {
     res.status(200).json(conversationHistory);
   } catch (e) {
     console.log("Got an error:", e);
-    res.sendStatus(500);
+    res.sendStatus(500).json({ error: "Could not retrieve conversation" });
   }
 }
 
@@ -55,7 +55,7 @@ async function getConversationsList(req, res) {
     res.status(200).json(conversationList);
   } catch (e) {
     console.log("Got an error:", e);
-    res.sendStatus(500);
+    res.sendStatus(500).json({ error: "Could not retrieve conversation list" });
   }
 }
 
