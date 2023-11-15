@@ -6,7 +6,6 @@ async function postMessage(message) {
     return newMessageWithId;
   } catch (e) {
     console.log("User message not posted:", e);
-    throw e;
   }
 }
 
@@ -18,7 +17,6 @@ async function retrieveConversation(conversationID) {
     return conversationByID;
   } catch (e) {
     console.log("Conversation retrieval failed:", e);
-    throw e;
   }
 }
 
@@ -28,7 +26,6 @@ async function retrieveConversationList() {
     return conversationList;
   } catch (e) {
     console.log("Conversation list retrieval failed:", e);
-    throw e;
   }
 }
 
@@ -37,7 +34,6 @@ async function addGPTReplyProp(gptReply, id) {
     await LanGageMessage.updateOne({ _id: id }, { $set: { reply: gptReply } });
   } catch (e) {
     console.log("User message not posted:", e);
-    throw e;
   }
 }
 
