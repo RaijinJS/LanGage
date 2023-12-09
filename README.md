@@ -63,44 +63,44 @@ Run the server from the terminal with the command `npx nodemon index.js`.
 
 Start a new conversation - The LanGage mascot quietly reads his book while waiting.
 
-![1.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\1.png)
+![1.png](./Screenshots/1.png)
 
 Write a message to receive a reply and feedback, the LanGage mascot points to the board to bring the user's attention towards his feedback:
 
-![2.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\2.png)
+![2.png](./Screenshots/2.png)
 
 If there are no mistakes in the user input, LanGage will provide encouragement:
 
-![3.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\3.png)
+![3.png](./Screenshots/3.png)
 
 After a user message is sent, there can be a minor delay due to the speed of the GPT API. During this time, the user input field is disabled and a "Please wait..." message replaces the type here placeholder. At the same time, the LanGage mascot seems to be deep in thought reading the user's message....
 
-![4.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\4.png)
+![4.png](./Screenshots/4.png)
 
 The user may want to start a new conversation or revisit a previous one, clicking the hamburger menu in the navigation bar will reveal previous conversations as well as the option to start a new one.
 
-![5.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\5.png)
+![5.png](./Screenshots/5.png)
 
 When the user opens up an old conversation with a pending reply from LanGage, the LanGage mascot will point to a letter to indicate he's waiting for a reply.
 
-![6.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\6.png)
+![6.png](./Screenshots/6.png)
 
 Want to see feedback on an older message? Hovering over your message will reveal a feedback button, clicking it will replace the content in the feedback chalkboard with the relevant feedback.
 
-![7.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\7.png)
+![7.png](./Screenshots/7.png)
 
 Not sure what the response from LanGage means? Or just not familiar with a specific word? Hovering over a message will reveal a translate button, while clicking on a word will open up a pop-up with a translation by DeepL.
 
-![8.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\8.png)
+![8.png](./Screenshots/8.png)
 
-![9.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\9.png)
+![9.png](./Screenshots/9.png)
 
-![10.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\10.png)
+![10.png](./Screenshots/10.png)
 
 LanGage is responsive!
 
-![11.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\11.png)
+![11.png](./Screenshots/11.png)
 
-![12.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\12.png)
+![12.png](./Screenshots/12.png)
 
-![13.png](C:\Users\chris\Documents\Software%20Development\Codeworks\Senior%20Projects\Solo\LanGage\Screenshots\13.png)
+![13.png](./Screenshots/13.png)
