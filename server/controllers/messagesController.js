@@ -51,7 +51,6 @@ async function getConversation(req, res) {
 async function getConversationsList(req, res) {
   try {
     const conversationList = await retrieveConversationList();
-    console.log("conversationList: ", conversationList);
     res.status(200).json(conversationList);
   } catch (e) {
     console.log("Got an error:", e);
