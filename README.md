@@ -38,7 +38,13 @@ and fears aside and improve your conversational prowess today!
 
 ## Getting Started
 
- The project is divided into two repositories, front end (Langage_client) and back end (LanGage). Run `npm i` in both directories and make sure to add a config file to the backend in the server directory. The config file should contain the following:
+ The project is divided into two repositories, front end (Langage_client) and back end (LanGage).
+LanGage client: Run `npm i`, then `npm start`.
+LanGage (server): CD into server and run `npm i`. Make sure to add a config.js file to the server directory. The config file should contain the following:
+
+https://platform.openai.com/docs/api-reference/authentication
+
+https://www.deepl.com/en/docs-api
 
 ```
 module.exports = {port: 3001,
@@ -49,6 +55,8 @@ module.exports = {port: 3001,
 
 };
 ```
+
+Run the server from the terminal with the command `npx nodemon index.js`.
 
 ## Demo Screenshots:
 
