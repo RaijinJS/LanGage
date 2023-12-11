@@ -38,7 +38,8 @@ and fears aside and improve your conversational prowess today!
 
 ## Getting Started
 
-The project is divided into two repositories, front end (Langage_client) and back end (LanGage).
+The project is divided into two repositories, front-end (Langage_client) and back-end (LanGage).
+The front-end will not function correctly without the back-end and its configuration file.
 
 LanGage client: Run `npm i`, then `npm start`.
 LanGage (server): CD into server and run `npm i`. Make sure to add a config.js file to the server directory. The config file should contain the following:
